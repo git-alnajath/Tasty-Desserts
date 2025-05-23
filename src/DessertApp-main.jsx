@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { FaSearch } from "react-icons/fa";
 import { CiViewTable } from "react-icons/ci";
+// Dessert images
 import pic1 from "./assets/ph1.webp";
 import pic2 from "./assets/ph2.jpeg";
 import pic3 from "./assets/ph3.jpeg";
@@ -11,9 +12,11 @@ import pic6 from "./assets/ph6.jpeg";
 import pic7 from "./assets/ph7.jpeg";
 import pic8 from "./assets/ph8.jpeg";
 import pic9 from "./assets/ph9.jpeg";
+// Individual card component
 import Project from "./DessertApp-card";
 
 export default function DessertApp_main() {
+  // Dessert items array
   const arr = [
     {
       id: 1,
@@ -71,30 +74,35 @@ export default function DessertApp_main() {
     },
   ];
 
+  // State declarations
   let [val, setval] = useState(true);
   let [inp, setinp] = useState(true);
   let [count, setcount] = useState(0);
   let [data2, setdata2] = useState("");
-
   let [propesobj, setpropsobj] = useState([]);
   let [total, settotal] = useState(0);
   let [howmany, sethowmany] = useState([]);
 
+  // Function to handle adding items to cart
   const inc = (getprops) => {
-    setcount(count + 1);
+    setcount(count + 1); // Increment item count
+
+    // Check if item already added
     let result = propesobj.some((item) => item.id === getprops.id);
     if (!result) {
-      setpropsobj((data) => [...data, getprops]);
+      setpropsobj((data) => [...data, getprops]); // Add new item
     }
-    settotal(() => total + getprops.rs);
 
-    sethowmany((data) => [...data, getprops.id]);
+    settotal(() => total + getprops.rs); // Update total price
+    sethowmany((data) => [...data, getprops.id]); // Track item ID for quantity
   };
 
+  // Search input handler
   const stor = (e) => {
-    setdata2(e.target.value);
+    setdata2(e.target.value); // Convert to lowercase for matching
   };
 
+  // Toggle bill view
   const detail = () => {
     if (val == true) {
       setval(false);
@@ -104,6 +112,7 @@ export default function DessertApp_main() {
     }
   };
 
+  // Toggle input field view
   const inpt = () => {
     if (inp == true) {
       setinp(false);
@@ -115,6 +124,7 @@ export default function DessertApp_main() {
 
   return (
     <div className="overall">
+      {/* Navbar */}
       <div className="navbar">
         <div className="nav-left">
           <h2>
@@ -122,12 +132,14 @@ export default function DessertApp_main() {
           </h2>
         </div>
 
+        {/* Search input */}
         <input
           placeholder={"Search here"}
           className={inp == true ? "int1" : "int"}
           onChange={stor}
         />
 
+        {/* Icons */}
         <div className="nav-right">
           <h2 onClick={inpt}>
             <FaSearch />
@@ -138,6 +150,8 @@ export default function DessertApp_main() {
           </h2>
         </div>
       </div>
+
+      {/* Bill Section */}
       <div className={val == true ? "details2" : "details"}>
         <h1>Bill</h1>
 
