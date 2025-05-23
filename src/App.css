@@ -102,7 +102,7 @@ body {
 }
 
 .box {
-  background: linear-gradient(to right, white, rgb(86, 0, 144));
+  background: linear-gradient(to right, rgb(140, 85, 23), rgb(26, 26, 26));
   height: 200vh;
   width: 100%;
   padding: 2%;
@@ -114,8 +114,8 @@ body {
 }
 
 .photos {
-  height: 25%;
-  width: 25%;
+  height: 250px;
+  width: 300px;
   border-radius: 10px;
   position: relative;
 }
