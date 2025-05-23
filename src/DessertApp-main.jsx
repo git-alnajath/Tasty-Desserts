@@ -117,9 +117,9 @@ export default function DessertApp_main() {
     <div className="overall">
       <div className="navbar">
         <div className="nav-left">
-          <h3>
+          <h2>
             <span>TASTY</span> DESSERTS
-          </h3>
+          </h2>
         </div>
 
         <input

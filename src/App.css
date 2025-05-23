@@ -13,34 +13,34 @@ body {
 .overall {
   background-color: grey;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 
 }
 
 .navbar {
-  /* position: fixed;
-  z-index: 999; */
-  background: linear-gradient(to right, rgb(179, 111, 224), rgb(86, 0, 144));
+  background: linear-gradient(to right, rgb(162, 66, 66), rgb(86, 0, 144));
   height: 10vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .nav-left {
-  background-color: transparent;
-  height: 100%;
-  width: 20%;
+  background-color: black;
+  margin-left: 20px;
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .nav-right {
   background-color: transparent;
   height: 100%;
-  width: 10%;
+  width: 100px;
+  margin-right: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -103,14 +103,14 @@ body {
 
 .box {
   background: linear-gradient(to right, rgb(123, 66, 0), rgb(26, 26, 26));
-  height: 200vh;
-  width: 100%;
-  padding: 2%;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 6%;
+  gap: 25px;
 }
 
 .photos {
