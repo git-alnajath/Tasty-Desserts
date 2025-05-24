@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { FaSearch } from "react-icons/fa";
-import { CiViewTable } from "react-icons/ci";
+// import { CiViewTable } from "react-icons/ci";
+import { LiaReceiptSolid } from "react-icons/lia";
 // Dessert images
 import pic1 from "./assets/ph1.webp";
 import pic2 from "./assets/ph2.jpeg";
@@ -81,6 +82,7 @@ export default function DessertApp_main() {
   let [data2, setdata2] = useState("");
   let [propesobj, setpropsobj] = useState([]);
   let [total, settotal] = useState(0);
+  let [total_quantity, settotal_q] = useState(0);
   let [howmany, sethowmany] = useState([]);
 
   // Function to handle adding items to cart
@@ -145,8 +147,13 @@ export default function DessertApp_main() {
             <FaSearch />
           </h2>
           <h2 onClick={detail}>
-            <CiViewTable />
-            {count > 0 ? <sup>{count}</sup> : null}
+            {/* <CiViewTable /> */}
+            <LiaReceiptSolid />
+            {count > 0 ? (
+              <sup>
+                <h6>{count}</h6>
+              </sup>
+            ) : null}
           </h2>
         </div>
       </div>
@@ -176,8 +183,12 @@ export default function DessertApp_main() {
               </tr>
             ))}
           </tbody>
+          <tr>
+            <th>Total</th>
+            <th>{howmany.length}</th>
+            <th>{total}</th>
+          </tr>
         </table>
-
         <div className="total">
           <b>Total:</b>
           <b>{total}</b>
